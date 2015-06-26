@@ -20,7 +20,8 @@
     "devDependencies": {},
     "scripts": {
         "install": "cd backend && npm install && cd ../frontend && npm install",
-        "test": "cd backend && mocha"
+        "test": "cd backend && mocha",
+        "start": "cd backend && sails lift && cd../frontend gulp serve"
     },
     "repository": {
         "type": "git",
