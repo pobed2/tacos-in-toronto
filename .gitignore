@@ -30,8 +30,9 @@
 .netbeans
 nbproject
 .idea
+.tmp
 .node_history
 node_modules
-bower_modules
+bower_components
 
 npm-debug.log

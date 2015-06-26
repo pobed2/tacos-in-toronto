@@ -19,6 +19,7 @@
     "then-jade": "1.1.0"
   },
   "scripts": {
+    "install": "bower install",
     "start": "node app.js",
     "debug": "node debug app.js"
   },
