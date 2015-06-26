@@ -1,35 +1,32 @@
 {
-    "name": "tacos-in-toronto",
-    "version": "1.0.0",
-    "description": "",
-    "keywords": [
-        "sails.js",
-        "backend",
-        "REST",
-        "API",
-        "JWT",
-        "JSON Web Token",
-        "Passport.js",
-        "frontend",
-        "angular",
-        "slush",
-        "slush-angular"
-    ],
-    "main": "",
-    "dependencies": {},
-    "devDependencies": {},
-    "scripts": {
-        "install": "cd backend && npm install && cd ../frontend && npm install",
-        "test": "cd backend && mocha",
-        "start": "cd backend && sails lift && cd../frontend gulp serve"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/pobed2/tacos-in-toronto.git"
-    },
-    "bugs": {
-        "url": "https://github.com/pobed2/tacos-in-toronto.git"
-    },
-    "author": "Pierre-Olivier Bédard",
-    "license": "MIT"
+  "name": "sailsjs-angularjs-bootstrap-example",
+  "private": true,
+  "version": "0.0.2",
+  "description": "A Sails.js / AngularJS / Twitter Bootstrap example application",
+  "engines": {
+    "node": ">=0.10.3 <0.12"
+  },
+  "dependencies": {
+    "async": "0.2.9",
+    "bcrypt": "^0.8.1",
+    "grunt": "0.4.2",
+    "jade": "1.0.2",
+    "optimist": "0.3.4",
+    "passport": "0.1.18",
+    "passport-local": "0.1.6",
+    "sails": "0.9.16",
+    "sails-disk": "~0.9.0",
+    "then-jade": "1.1.0"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "debug": "node debug app.js"
+  },
+  "main": "app.js",
+  "repository": "",
+  "author": "Christopher Martin <cgmartin@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt-contrib-less": "~0.8.3"
+  }
 }
