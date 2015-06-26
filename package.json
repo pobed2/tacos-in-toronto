@@ -19,7 +19,7 @@
     "then-jade": "1.1.0"
   },
   "scripts": {
-    "install": "npm install; bower install",
+    "install": "npm install && bower install",
     "start": "node app.js",
     "debug": "node debug app.js"
   },
