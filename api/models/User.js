@@ -1,69 +1,68 @@
-// Credit:
-// @adityamukho https://gist.github.com/adityamukho/6260759
-
-var bcrypt = require('bcrypt');
-
-function hashPassword(values, next) {
-  bcrypt.hash(values.password, 10, function(err, hash) {
-    if (err) {
-      return next(err);
-    }
-    values.password = hash;
-    next();
-  });
-}
+/**
+ * User.js
+ *
+ * @description :: Each record in this model represents a user's account in Activity Overlord.
+ * @docs        :: http://sailsjs.org/#!documentation/models
+ */
 
 module.exports = {
+
   attributes: {
-    username: {
-      type: 'STRING',
-      required: true,
-      unique: true
+
+    // The user's full name
+    // e.g. Jon Snow
+    name: {
+      type: 'string',
+      required: true
     },
-    password: {
-      type: 'STRING',
-      required: true,
-      minLength: 6
+
+    // The user's title at their job (or something)
+    // e.g. Lord Commander, Night's Watch
+    title: {
+      type: 'string'
     },
+
+    // The user's email address
+    // e.g. jonsnow@winterfell.net
     email: {
       type: 'email',
       required: true,
       unique: true
     },
-    // Override toJSON instance method to remove password value
-    toJSON: function() {
-      var obj = this.toObject();
-      delete obj.password;
-      return obj;
+
+    // The encrypted password for the user
+    // e.g. asdgh8a249321e9dhgaslcbqn2913051#T(@GHASDGA
+    encryptedPassword: {
+      type: 'string'
     },
-    validPassword: function(password, callback) {
-      var obj = this.toObject();
-      if (callback) {
-        //callback (err, res)
-        return bcrypt.compare(password, obj.password, callback);
-      }
-      return bcrypt.compareSync(password, obj.password);
-    }
-  },
-  // Lifecycle Callbacks
-  beforeCreate: function(values, next) {
-    hashPassword(values, next);
-  },
-  beforeUpdate: function(values, next) {
-    if (values.password) {
-      hashPassword(values, next);
-    }
-    else {
-      //IMPORTANT: The following is only needed when a BLANK password param gets submitted through a form. Otherwise, a next() call is enough.
-      User.findOne(values.id).done(function(err, user) {
-        if (err) {
-          next(err);
-        }
-        else {
-          values.password = user.password;
-          next();
-        }
-      });
+
+    // The timestamp when the user was last "active"
+    // (i.e. they hit UserController.comeOnline())
+    // We use this to indicate whether they are "online" or not.
+    lastActive: {
+      type: 'date',
+      required: true,
+      defaultsTo: new Date(0)
+    },
+
+    // The timestamp when the the user last logged in
+    // (i.e. sent a username and password to the server)
+    lastLoggedIn: {
+      type: 'date',
+      required: true,
+      defaultsTo: new Date(0)
+    },
+
+    // Whether or not the user has administrator privileges
+    admin: {
+      type: 'boolean',
+      defaultsTo: false
+    },
+
+    // url for gravatar
+    gravatarUrl: {
+      type: 'string'
     }
   }
+
 };
