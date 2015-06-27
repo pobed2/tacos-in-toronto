@@ -25,7 +25,8 @@
     "connect-redis": "1.4.5",
     "machinepack-passwords": "^2.0.0",
     "sails-mongo": "^0.10.4",
-    "machinepack-gravatar": "^1.1.0"
+    "machinepack-gravatar": "^1.1.0",
+    "socket.io-redis":"0.1.4"
   },
   "scripts": {
     "start": "node app.js",
