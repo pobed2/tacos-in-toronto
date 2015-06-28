@@ -42,10 +42,8 @@ module.exports.connections = {
   * Run: npm install sails-mongo                                             *
   *                                                                          *
   ***************************************************************************/
-
-  localMongodbServer: {
-    adapter: 'sails-mongo',
-    host: 'localhost',
-    port: 27017
+  mongodb: {
+      adapter: 'sails-mongo',
+      url: process.env.MONGOHQ_URL
   }
 };
