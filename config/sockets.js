@@ -50,8 +50,7 @@ module.exports.sockets = {
   // db: 'sails',
   // pass: '<redis auth password>'
   adapter: 'socket.io-redis',
-  url: process.env.REDIS_URL,
-  pass: process.env.REDIS_PASSWORD
+  url: process.env.REDIS_URL
 
 
 

@@ -52,8 +52,7 @@ module.exports.session = {
   *                                                                          *
   ***************************************************************************/
 
-  url: process.env.REDIS_URL,
-  pass: process.env.REDIS_PASSWORD
+  url: process.env.REDIS_URL
   // host: 'localhost',
   // port: 6379,
   // ttl: <redis session TTL in seconds>,
