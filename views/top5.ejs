@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Tacos in Toronto!</title>
+    <title>Top 5!</title>
 
     <!-- Viewport mobile tag for sensible mobile support -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -21,7 +21,7 @@
 
   </head>
 
-  <body ng-app="ActivityOverlordPublic" ng-controller="PublicCtrl" ng-cloak>
+  <body ng-app="ActivityOverlordPublic" ng-cloak>
 
     <!-- Global errors (uiErrorBus) -->
     <div class="ui-error-bus">
@@ -41,55 +41,18 @@
 
           <!-- This is the brand on the left-hand side. -->
           <a class="navbar-brand" href="/#"> activityOverlord</a>
-
           <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
-            <ul class="nav navbar-nav">
-              <li><a href="/top5">Top 5</a></li>
-            </ul>
-
-          <form ng-submit="submitLoginForm()" class="navbar-form navbar-right">
-
-              <!-- Error message -->
-              <ul ng-show="loginForm.topLevelErrorMessage" class="alert alert-danger">
-                <li>
-                  <span>{{loginForm.topLevelErrorMessage}}</span>
-                </li>
-              </ul>
-
-              <div class="form-group">
-                  <input ng-model="loginForm.email" type="text" placeholder="Email" name="email" class="form-control">
-              </div>
-              <div class="form-group">
-                  <input ng-model="loginForm.password" type="password" placeholder="Password" name="password" class="form-control">
-              </div>
-              <button type="submit" class="btn btn-success">
-                <span ng-show="!loginForm.loading">Sign in</span>
-                <span ng-show="loginForm.loading" class="fa fa-spinner"></span>
-                <span ng-show="loginForm.loading">Signing in...</span>
-              </button>
-              <input type="hidden" name="_csrf" value="<%= _csrf %>" />
-          </form>
+          <ul class="nav navbar-nav">
+            <li><a href="/top5">Top 5</a></li>
+          </ul>
         </nav>
       </div>
     </div>
 
-    <div class=" col-md-8 col-md-offset-2">
-      <div class="jumbotron">
-        <h1>the Main App</h1>
-        <h2>...tracking app activity better than the NSA since 1899.</h2>
-        <a href="/signup" class="btn btn-lg btn-success">Sign up now!</a>
-      </div>
-    </div>
+    This is a simple Top5 of the keywords used in tacos reviews.
 
-
-    <div class="container">
-        <hr>
-        <footer class="footer pull-right">
-            <div>
-                <a href="http://sailsjs.com/">sailsjs.org</a>
-                <div>tutorial by irl nathan, with a bunch of help from cody, gabe, heather, mike, racheal, scott and zoli</div>
-            </div>
-        </footer>
+    <div ng-controller="Top5Controller as top" >
+        <div ui-grid="{ data: top.keywords }" class="top5 center-block"></div>
     </div>
 
 
