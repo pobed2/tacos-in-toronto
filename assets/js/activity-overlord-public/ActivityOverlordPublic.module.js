@@ -53,28 +53,19 @@ angular.module('ActivityOverlordPublic')
 //
 // Listen for url fragment changes like "#/foo/bar-baz" so we can change the contents
 // of the <ng-view> tag (if it exists)
-// angular.module('ActivityOverlordPublic')
-// .config(['$routeProvider', function($routeProvider) {
-
-//   $routeProvider
-
-//   // #/    (i.e. ng-view's "home" state)
-//   .when('/', {
-//     templateUrl: 'templates/public/jumbotron.html',
-//     controller: ['$scope', '$location', function($scope, $location) {
-//       // ...
-//     }]
-//   })
-
-//   // #/    (i.e. ng-view's "home" state)
-//   .when('/signup', {
-//     templateUrl: 'templates/public/signup.html',
-//     controller: ['$scope', '$location', function($scope, $location) {
-//       // ...
-//     }]
-//   })
-
-//   .otherwise({
-//     redirectTo: '/'
-//   });
-// }]);
+angular.module('ActivityOverlordPublic')
+.config(['$routeProvider', function($routeProvider) {
+  $routeProvider
+  .when('/', {
+    templateUrl: 'templates/public/jumbotron.html'
+  })
+  .when('/signup', {
+    templateUrl: 'templates/public/signup.html'
+  })
+  .when('/top5', {
+    templateUrl: 'templates/public/top5.html'
+  })
+  .otherwise({
+    redirectTo: '/'
+  });
+}]);

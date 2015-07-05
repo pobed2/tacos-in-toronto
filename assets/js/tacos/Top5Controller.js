@@ -1,4 +1,4 @@
-angular.module('ActivityOverlordPublic', ['ui.grid']).controller('Top5Controller', ['$scope','$http', function($scope, $http) {
+angular.module('ActivityOverlordDashboard').controller('Top5Controller', ['$scope','$http', function($scope, $http) {
   var top = this;
   /////////////////////////////////////////////////////////////////////////////////
   // When HTML is rendered...

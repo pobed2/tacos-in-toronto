@@ -20,7 +20,6 @@
 module.exports.policies = {
 
   UserController: {
-
     logout: ['isLoggedIn'],
     updateMyProfile: ['isLoggedIn'],
     comeOnline: ['isLoggedIn'],
@@ -28,6 +27,13 @@ module.exports.policies = {
 
     find: ['isAdmin'],
     findOne: ['isAdmin'],
+    update: ['isAdmin'],
+    destroy: ['isAdmin']
+  },
+  KeywordController: {
+    topFive: ['isLoggedIn'],
+    find: ['isLoggedIn'],
+    findOne: ['isLoggedIn'],
     update: ['isAdmin'],
     destroy: ['isAdmin']
   }
