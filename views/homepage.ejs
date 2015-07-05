@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Activity Overlord (angular)</title>
+    <title>Tacos in Toronto!</title>
 
     <!-- Viewport mobile tag for sensible mobile support -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/styles/angular-toastr.css">
     <link rel="stylesheet" href="/styles/bootstrap.3.1.1.css">
     <link rel="stylesheet" href="/styles/importer.css">
+    <link rel="stylesheet" href="/styles/ui-grid-stable.css">
     <!--STYLES END-->
 
     <!--Added this so the client has access to the csrf tag and it's grabbed first service side on every page -->
@@ -39,8 +40,10 @@
           </button>
 
           <!-- This is the brand on the left-hand side. -->
-          <a class="navbar-brand" href="/#"> activityOverlord</a>
+          <a class="navbar-brand" href="/#/"> Tacos in Toronto</a>
+
           <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
+
           <form ng-submit="submitLoginForm()" class="navbar-form navbar-right">
 
               <!-- Error message -->
@@ -67,25 +70,7 @@
       </div>
     </div>
 
-    <div class=" col-md-8 col-md-offset-2">
-      <div class="jumbotron">
-        <h1>the Main App</h1>
-        <h2>...tracking app activity better than the NSA since 1899.</h2>
-        <a href="/signup" class="btn btn-lg btn-success">Sign up now!</a>
-      </div>
-    </div>
-
-
-    <div class="container">
-        <hr>
-        <footer class="footer pull-right">
-            <div>
-                <a href="http://sailsjs.com/">sailsjs.org</a>
-                <div>tutorial by irl nathan, with a bunch of help from cody, gabe, heather, mike, racheal, scott and zoli</div>
-            </div>
-        </footer>
-    </div>
-
+    <div ng-view></div>
 
     <!--SCRIPTS-->
     <script src="/js/dependencies/sails.io.js"></script>
@@ -97,11 +82,13 @@
     <script src="/js/dependencies/jquery.js"></script>
     <script src="/js/dependencies/lodash.min.js"></script>
     <script src="/js/dependencies/moment.js"></script>
+    <script src="/js/dependencies/ui-grid-stable.js"></script>
     <script src="/js/activity-overlord-dashboard/ActivityOverlordDashboard.module.js"></script>
     <script src="/js/activity-overlord-dashboard/DashboardCtrl.js"></script>
     <script src="/js/activity-overlord-public/ActivityOverlordPublic.module.js"></script>
     <script src="/js/activity-overlord-public/ui-controls/PublicCtrl.js"></script>
+    <script src="/js/activity-overlord-public/ui-controls/Top5Controller.js"></script>
+    <script src="/js/tacos/Top5Controller.js"></script>
     <!--SCRIPTS END-->
   </body>
 </html>
-

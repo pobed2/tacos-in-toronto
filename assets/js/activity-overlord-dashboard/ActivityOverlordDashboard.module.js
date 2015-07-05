@@ -1,4 +1,4 @@
-angular.module('ActivityOverlordDashboard', ['ngRoute', 'toastr']);
+angular.module('ActivityOverlordDashboard', ['ngRoute', 'toastr', 'ui.grid']);
 
 angular.module('ActivityOverlordDashboard')
 .config(['toastrConfig', function(toastrConfig) {
@@ -224,7 +224,9 @@ angular.module('ActivityOverlordDashboard')
   .when('/stuff', {
     templateUrl: 'templates/dashboard/example-page.html'
   })
-
+  .when('/top5', {
+    templateUrl: 'templates/tacos/top5.html'
+  })
 
 
   // #/?????     (i.e. anything else)
